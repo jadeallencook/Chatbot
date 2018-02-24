@@ -27,6 +27,9 @@
       this.elem.appendChild(this.blank());
       this.elem.appendChild(answerElem);
       this.elem.appendChild(this.blank());
+      if (this.questions[0]) this.cue.splice(num, 1, this.questions[0]);
+      else this.cue.splice(num, 1);
+      this.questions.splice(0, 1);
       this.load();
     },
     blank: function () {
@@ -38,7 +41,10 @@
     load: function () {
       if (!this.init) {
         for (var x = 0; x < 4; x++) {
-          if (this.questions[x]) this.cue.push(this.questions[x]);
+          if (this.questions[0]) {
+            this.cue.push(this.questions[0]);
+            this.questions.splice(0, 1);
+          }
         }
       }
       for (var x = 0, max = this.cue.length; x < max; x++) {
@@ -51,7 +57,6 @@
         message.innerText = question.question;
         message.setAttribute('data-num', x);
         this.elem.appendChild(message);
-        this.questions.splice(0, 1);
         message.onclick = function () {
           var num = this.getAttribute('data-num');
           num = parseInt(num);

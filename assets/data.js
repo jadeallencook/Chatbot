@@ -20,20 +20,8 @@ const data = [
     answer: "Idk, I didn't make it.",
     next: false
   }, {
-    question: "Another question 4",
-    answer: "Another answer",
-    next: false
-  }, {
-    question: "Another question 5",
-    answer: "Another answer",
-    next: false
-  }, {
-    question: "Another question 6",
-    answer: "Another answer",
-    next: false
-  }, {
-    question: "Another question 7",
-    answer: "Another answer",
+    question: "What language is this coded in?",
+    answer: "This application is coded using JavaScript ES5 & SCSS!",
     next: false
   }
 ]
