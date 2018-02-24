@@ -39,6 +39,7 @@
       this.elem.innerHTML = '';
     },
     load: function () {
+      var disclaimerText = '';
       if (!this.init) {
         for (var x = 0; x < 4; x++) {
           if (this.questions[0]) {
@@ -47,21 +48,25 @@
           }
         }
       }
-      for (var x = 0, max = this.cue.length; x < max; x++) {
-        var question = this.cue[x];
-        var message = document.createElement('li');
-        message.classList.add('question');
-        message.classList.add('animated');
-        if (x % 2 == 0) message.classList.add('slideInLeft');
-        else message.classList.add('slideInRight');
-        message.innerText = question.question;
-        message.setAttribute('data-num', x);
-        this.elem.appendChild(message);
-        message.onclick = function () {
-          var num = this.getAttribute('data-num');
-          num = parseInt(num);
-          messages.answer(num);
+      if (this.cue.length > 0) {
+        for (var x = 0, max = this.cue.length; x < max; x++) {
+          var question = this.cue[x];
+          var message = document.createElement('li');
+          message.classList.add('question');
+          message.classList.add('animated');
+          if (x % 2 == 0) message.classList.add('slideInLeft');
+          else message.classList.add('slideInRight');
+          message.innerText = question.question;
+          message.setAttribute('data-num', x);
+          this.elem.appendChild(message);
+          message.onclick = function () {
+            var num = this.getAttribute('data-num');
+            num = parseInt(num);
+            messages.answer(num);
+          }
         }
+      } else {
+        if (disclaimerText === '') disclaimerText = 'You\'ve clicked on all available questions...';
       }
       // bottom message
       var disclaimer = document.createElement('li');
@@ -70,11 +75,12 @@
       if (!this.init) {
         disclaimer.classList.add('pulse');
         disclaimer.classList.add('infinite');
-        disclaimer.innerText = 'Click a question to get started...';
+        if (disclaimerText === '') disclaimerText = 'Click a question to get started...';
       } else {
         disclaimer.classList.add('fadeIn');
-        disclaimer.innerText = 'What else would you like to know...';
+        if (disclaimerText === '') disclaimerText = 'What else would you like to know...';
       }
+      disclaimer.innerText = disclaimerText;
       this.elem.appendChild(disclaimer);
       this.init = true;
     }
