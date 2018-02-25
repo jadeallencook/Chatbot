@@ -27,9 +27,14 @@
       this.elem.appendChild(this.blank());
       this.elem.appendChild(answerElem);
       this.elem.appendChild(this.blank());
-      if (this.questions[0]) this.cue.splice(num, 1, this.questions[0]);
-      else this.cue.splice(num, 1);
-      this.questions.splice(0, 1);
+      if (question.next) {
+        this.cue.splice(num, 1, question.next);
+      } else if (this.questions[0]) {
+        this.cue.splice(num, 1, this.questions[0]);
+        this.questions.splice(0, 1);
+      } else {
+        this.cue.splice(num, 1);
+      }
       this.load();
     },
     blank: function () {

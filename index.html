@@ -9,23 +9,30 @@
   }
 
   div#container {
-    width: 75%;
+    width: 100%;
     max-width: 500px;
     height: 550px;
     margin: 25px auto;
+  }
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    div#container { 
+      width: 100%;
+      max-width: none;
+      height: 1200px;
+    }
   }
 </style>
 
 <div id="container">
   <div class="questions-bot-container">
     <div class="questions-top-bar">
-      Question Chat Bot
+      Question Bot
     </div>
     <ul>
       <li class="msg">Loading...</li>
     </ul>
     <div class="questions-bottom-bar">
-      Created By <b>Jade Allen Cook</b>
+      Created By Jade Allen Cook
     </div>
   </div>
 </div>
