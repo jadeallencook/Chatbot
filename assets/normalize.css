@@ -1,0 +1,20 @@
+html,
+body {
+  font-family: Helvetica;
+  background-color: rgb(185, 185, 185);
+}
+
+div#container {
+  width: 100%;
+  max-width: 500px;
+  height: 550px;
+  margin: 25px auto;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  div#container {
+    width: 100%;
+    max-width: none;
+    height: 1200px;
+  }
+}

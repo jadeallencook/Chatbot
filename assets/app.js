@@ -4,6 +4,7 @@
     allClickedMessage = 'You\'ve clicked on all available questions...',
     initMessage = 'Click a question to get started...',
     continousMessage = 'What else would you like to know...';
+  data = data;
   // jquery, lol
   function $(elem) {
     var elem = document.querySelectorAll(elem);
@@ -14,6 +15,7 @@
     container: $('div.questions-bot-container ul'),
     questions: data,
     cue: [],
+    complete: data,
     init: false,
     message: function (text, type, animation) {
       var elem = document.createElement('li');
@@ -74,14 +76,24 @@
     },
     disclaimer: function () {
       var text = '';
-      if (this.cue.length === 0) text = allClickedMessage;
       var elem = document.createElement('li');
       elem.classList.add('msg');
       elem.classList.add('animated');
+      elem.classList.add('reset');
       if (!this.init) {
         elem.classList.add('pulse');
         elem.classList.add('infinite');
         if (text === '') text = initMessage;
+      } else if (this.cue.length === 0) {
+        text = allClickedMessage;
+        elem.onclick = function() {
+          messages.init = false;
+          messages.cue = [];
+          messages.questions = messages.complete;
+          messages.complete = [];
+          messages.clear();
+          messages.load();
+        }
       } else {
         elem.classList.add('fadeIn');
         if (text === '') text = continousMessage;

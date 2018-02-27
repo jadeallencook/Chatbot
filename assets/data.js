@@ -1,25 +1,17 @@
-const data = [{
-  question: "What is Question Bot?",
-  answer: "Question Bot helps readers find content faster. See how fast you found this!",
+var data = [{
+  question: "What is Chatbot?",
+  answer: "Chatbot allows organizations to inform readers who are not deeply engaged in a compelling new way.",
   next: {
-    question: "How can I use Question Bot?",
-    answer: "You can either follow the instructions on the GitHub page or contact jadeallencook@gmail.com for assistance.",
+    question: "How can I use Chatbot?",
+    answer: "You can either follow the instructions on the GitHub page or contact @jadeallencook for assistance.",
     next: false
   }
 }, {
-  question: "Who made Question Bot?",
-  answer: "Question Bot was made by Jade Allen Cook for Deseret News to help subscribers become more engaged.",
+  question: "Why use Chatbot?",
+  answer: "Bots are designed to help demystify complicated stories and problems that people often struggle with.",
   next: {
-    question: "Who is Jade Allen Cook",
-    answer: "Jade Allen Cook is a software developer and digital artist in the United States.",
-    next: {
-      question: "Can you help me with my idea?",
-      answer: "If you need help with an online interactive; please email jadeallencook@gmail.com or Slack me!",
-      next: false
-    }
+    question: "How can Chatbot help?",
+    answer: "Readers may come into the story midway not know who the important people are or what the plot is. Chatbot helps your readers catch up on the situation!",
+    next: false
   }
-}, {
-  question: "Why should I use Question Bot?",
-  answer: "Question Bot allows your readers to learn your content faster and easier.",
-  next: false
 }]

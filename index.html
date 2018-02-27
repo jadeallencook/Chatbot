@@ -1,43 +1,29 @@
-<link rel="stylesheet" href="assets/style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+<!DOCTYPE html>
+<html lang="en">
 
-<title>Question Bot</title>
+<head>
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/normalize.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+</head>
 
-<style>
-  html,
-  body {
-    font-family: Helvetica;
-    background-color: rgb(185, 185, 185);
-  }
-
-  div#container {
-    width: 100%;
-    max-width: 500px;
-    height: 550px;
-    margin: 25px auto;
-  }
-  @media screen and (max-device-width: 480px) and (orientation: portrait) {
-    div#container { 
-      width: 100%;
-      max-width: none;
-      height: 1200px;
-    }
-  }
-</style>
-
-<div id="container">
-  <div class="questions-bot-container">
-    <div class="questions-top-bar">
-      Question Bot
-    </div>
-    <ul>
-      <li class="msg">Loading...</li>
-    </ul>
-    <div class="questions-bottom-bar">
-      Created By Jade Allen Cook
+<body>
+  <div id="container">
+    <div class="questions-bot-container">
+      <div class="questions-top-bar">
+        Chatbot
+      </div>
+      <ul>
+        <li class="msg">Loading...</li>
+      </ul>
+      <div class="questions-bottom-bar">
+        Developed By Jade Allen Cook
+      </div>
     </div>
   </div>
-</div>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
 
-<script src="assets/data.js"></script>
-<script src="assets/app.js"></script>
+</html>
